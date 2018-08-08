@@ -1,19 +1,6 @@
-import _ from 'lodash';
 import './sass/style.scss';
-import Icon from './icon.png';
+require.context("./images/", true, /\.(png|svg|jpg|gif)$/);
 
-function component() {
-  let element = document.createElement('div');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  // Add the image to our existing div.
-  var myIcon = new Image();
-  myIcon.src = Icon;
-  element.appendChild(myIcon);
-
-  return element;
-}
-
-document.body.appendChild(component());
+// example code
+var message = "Supports Babel!";
+console.log(`Important message: ${message}`);
