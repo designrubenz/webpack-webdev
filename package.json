@@ -1,6 +1,6 @@
 {
   "name": "webpack-demo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "private": true,
   "scripts": {
@@ -9,8 +9,7 @@
     "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Johannes Rubenz",
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",
