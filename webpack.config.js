@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const globImporter = require('node-sass-glob-importer');
 
 module.exports = {
   entry: { main:'./src/index.js' },
@@ -30,15 +31,31 @@ module.exports = {
         }
       },
 
-      // converty SASS to CSS, then minify and autprefix
+      // convert SASS to CSS, then minify and autoprefix
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader, // extract CSS into separate file
           "css-loader", // translates CSS into CommonJS
           "postcss-loader", // autoprefixes CSS
-          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+          { loader: "sass-loader", // compiles Sass to CSS, using Node Sass by default
+            options: {
+              importer: globImporter() // allows you to use glob syntax, eg. @import 'layout/*';
+            }
+          }
         ]
+      },
+
+      // include fonts in your build
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       },
 
       // include images in your build
@@ -56,7 +73,7 @@ module.exports = {
             loader: 'image-webpack-loader',
             options: {
               // best image compression settings: https://gist.github.com/LoyEgor/e9dba0725b3ddbb8d1a68c91ca5452b5
-              
+
               //png
               pngquant: {
                 speed: 1,
