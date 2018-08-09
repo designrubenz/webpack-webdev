@@ -19,7 +19,7 @@ defaults to make your webdev life easier.
 
 ### How to use
 * `npm start` starts a local server. If you change any of the files in `src/`, the browser will reflect the changes automatically ("autorefresh", "autoreload").
-* `npm build` builds a production bundle in `dist/`. (The folder gets deleted every time a new bundle is created.)
+* `npm run build` builds a production bundle in `dist/`. (The folder gets deleted every time a new bundle is created.)
 
 ### Features
 * uses sass (supporting the scss-syntax), minifies and auto-prefixes your css for production
