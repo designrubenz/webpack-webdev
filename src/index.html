@@ -48,8 +48,37 @@
     </head>
 
     <body>
-
+        <img src='<%= require("./images/icon.png") %>' alt='sun icon'>
         <h1>Welcome!</h1>
+        <h2>Images</h2>
+        <h3>Inline images</h3>
+        <p>Include images to your html-file:</p>
+        <code>&lt;img src='<em>&lt;%= require("./images/icon.png") %></em>' alt='the sun'&gt;</code>
+        <br>
+        <p>Here is another example using the srcset-attribute:</p>
+        <code>
+            &lt;img sizes='100vw'<br>
+            srcset='<br>
+            <em>&lt;%= require("./images/the_moon_w_300.jpg")%></em> 300w<br>
+            <em>&lt;%= require("./images/the_moon_w_845.jpg")%></em> 845w,<br>
+            <em>&lt;%= require("./images/the_moon_w_1199.jpg")%></em> 1199w'<br>
+            src='<em>&lt;%= require("./images/the_moon_w_1750.jpg") %></em>'<br>
+            alt='the moon'&gt;
+        </code>
+        <h3>Background images</h3>
+        <p class='bg-img'>Webpack will automatically detect background images in your CSS-code. No special syntax needed:</p>
+        <code>background: url('../images/tick.png');</code>
+        <br>
+        <h2>Variables</h2>
+        <p>The webpackhtml-plugin lets you interpolate variables into your HTML code. The syntax looks like this:</p>
+        <code>My favourite number is <em>&lt;%= JSON.stringify(htmlWebpackPlugin.options.favouriteNumber) %&gt;</em>. </code>
+        <p>Output:<br>My favourite number is <%= JSON.stringify(htmlWebpackPlugin.options.favouriteNumber) %>.</p>
+        <br>
+        <h2>Partials</h2>
+        <p>Include partials:</p>
+        <code><em>&lt;%= require(./partials/_footer.html') %&gt;</em></code>
+        <p>(Depends on the `html-loader`.)</p>
+        <%= require('./partials/_footer.html') %>
 
         <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
     </body>

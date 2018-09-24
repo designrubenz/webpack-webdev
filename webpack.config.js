@@ -46,7 +46,7 @@ module.exports = {
         ]
       },
 
-      // include fonts in your build
+      // include fonts
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
@@ -58,7 +58,15 @@ module.exports = {
         }]
       },
 
-      // include images in your build
+      // include partials (filename starts with _, eg. `./partials/_footer.html`
+      {
+        test: /\_.*\.html$/,
+        use: [{
+          loader: 'html-loader'
+        }]
+      },
+
+      // compress and include images
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
@@ -125,13 +133,15 @@ module.exports = {
       inject: false,
       hash: true,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      // TODO: just an example of using custom variables - delete this line:
+      favouriteNumber: 42
     })
   ],
 
   optimization: {
     minimizer: [
-      // minify js 
+      // minify js
       new UglifyJSPlugin({
         cache: true,
         parallel: true
