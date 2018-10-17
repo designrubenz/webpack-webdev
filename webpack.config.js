@@ -58,9 +58,10 @@ module.exports = {
         }]
       },
 
-      // include partials (filename starts with _, eg. `./partials/_footer.html`
+      // include partials (must be located in `src/partials/`)
       {
         test: /\_.*\.html$/,
+        include: [path.resolve(__dirname, 'src/partials')],
         use: [{
           loader: 'html-loader'
         }]

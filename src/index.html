@@ -52,7 +52,7 @@
         <h1>Welcome!</h1>
         <h2>Images</h2>
         <h3>Inline images</h3>
-        <p>Include images to your html-file:</p>
+        <p>Include images in your html-file:</p>
         <code>&lt;img src='<em>&lt;%= require("./images/icon.png") %></em>' alt='the sun'&gt;</code>
         <br>
         <p>Here is another example using the srcset-attribute:</p>
@@ -75,6 +75,7 @@
         <p>Output:<br>My favourite number is <%= JSON.stringify(htmlWebpackPlugin.options.favouriteNumber) %>.</p>
         <br>
         <h2>Partials</h2>
+        <p>Note: Partials must be located in <code class='inline'>src/partials</code>!</p>
         <p>Include partials:</p>
         <code><em>&lt;%= require(./partials/_footer.html') %&gt;</em></code>
         <p>(Depends on the `html-loader`.)</p>

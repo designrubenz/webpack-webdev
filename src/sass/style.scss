@@ -51,6 +51,12 @@ code {
   color: white;
 }
 
+code.inline {
+  display: inline-block;
+  margin:0;
+  padding: 0.25em;
+}
+
 .bg-img {
   background: url('../images/tick.png');
   background-repeat: no-repeat;
