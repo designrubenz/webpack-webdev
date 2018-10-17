@@ -8,9 +8,9 @@ developing a new conventional site (HTML, CSS, js) a breeze. It comes with some 
 defaults to make your webdev life easier.
 
 ### Changelog
-### Version 0.2
+#### Version 0.2
 * Fixes a critical bug when using partials. (Foldernames containing an underscore previously lead to errors).
-### Version 0.1
+#### Version 0.1
 * It just works™.
 
 Found bugs or akwardness? Please let me know or file an issue.
