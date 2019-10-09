@@ -48,7 +48,7 @@ At the time of writing, these are the best webpack/webdev-related resources:
 * The index.html is based on Google's [web-starter-kit](https://github.com/google/web-starter-kit).
 
 ### What else?
-Follow me on [twitter](https://twitter.com/j_rubenz)!
+Follow me on [twitter](https://twitter.com/johnrbnz)!
 
 ### Is that all?
 Maybe.
